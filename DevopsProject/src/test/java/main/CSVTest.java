@@ -10,7 +10,7 @@ import org.junit.Test;
 public class CSVTest {
 
 	@Test
-	public void testCSVPath() {
+	public void testCSVPath() throws FileNotFoundException {
 		CSV csv = new CSV("res/fich.csv");
 		assertNotNull("teste la création de CSV",csv);
 		
@@ -26,10 +26,11 @@ public class CSVTest {
 		assertEquals(csv.list[2][2],"XXS");
 	}
 	
-	/*@Test(expected = FileNotFoundException.class)
-	public void testCSVPathExeption() {
+	@Test
+	public void testCSVPathExeption(){
 		CSV csv = new CSV("res/mauvais_nom_de_fichier.csv");
-	}*/
+		assertNull(csv.reader);
+	}
 	
 	@Test
 	public void testCSVTableau() {

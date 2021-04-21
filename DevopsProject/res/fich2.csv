@@ -1,3 +1,4 @@
 name age size city
 Theo 67 XXL Grenoble
-Ivan 13 XXS Grenoble
+Ivan 13 XXS XXL
+maven 38 XXL Grenoble

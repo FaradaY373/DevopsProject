@@ -18,9 +18,9 @@ public class App
     public static void simple() 
     {
         CSV csv;
-        csv = new CSV("res/fich.csv");
+        csv = new CSV("res/fich2.csv");
         csv.parse();
-        System.out.println(csv.print());
+        System.out.println((csv.selectLines("38")).print());
     }
 
 }

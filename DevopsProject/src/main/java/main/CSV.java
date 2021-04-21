@@ -87,4 +87,110 @@ public class CSV {
 		}
 		return res;
 	}
+	public CSV lines(int l) {
+		String res[][]=new String[2][list[0].length];
+			res[0]=list[0].clone();
+			if(l<=0) {
+				l=1;
+			}
+			if(l>=list.length) {
+				l=list.length-1;
+			}
+			res[1]=list[l].clone();
+		return new CSV(res);
+    }
+	
+    public CSV columns(String s) {
+    	String res[][]=new String[list.length][1];
+		int i=0;
+		while(i<list.length && !s.equals(list[0][i]) ) {
+			i++;
+		}
+		if(i==list.length) {
+			//la clononne n'éxiste pas
+			return null;
+		}
+		for(int j=0;j<list.length;j++) {
+			res[j][0]=list[j][i];
+		}
+		
+	return new CSV(res);
+    }
+    
+    
+    public CSV selectColumns(Object o) {
+
+
+    	ArrayList<ArrayList<String[]>> res=new ArrayList<>();
+    	ArrayList <String[]> res2;
+    	Boolean vue;
+    	String tmp[]=new String[1];
+    	
+        for(int i=0;i<list.length;i++) {
+        	for (int j=0;j<list[0].length;j++) {
+        		if(o.equals(list[i][j])) {
+        			vue=false;
+        			for (ArrayList<String[]> h : res) {
+        	        	for (String[] f : h) {
+        	        		vue|=f[0].equals(list[0][j]);
+        	        	}
+        			}
+        			if(!vue) {
+        				res2=new ArrayList<>();
+	        			for(int y=0;y<list.length;y++) {
+	        				tmp[0]=list[y][j];
+	        				res2.add(tmp);
+	            			tmp=new String[1];
+	        			}
+	        			res.add(res2);
+        			}
+        		}
+        	}
+        }
+        if(res.size()==0) {
+        	return null;
+        }
+        String colone[][]=new String[res.get(0).size()][res.size()];
+        int r;
+        int k=0;
+        for (ArrayList<String[]> h : res) {
+        	r=0;
+        	for (String[] f : h) {
+        		colone[r][k]=f[0];
+        		r++;
+        	}
+        	k++;
+        }
+		return new CSV(colone);
+    }
+    
+    public CSV selectLines(Object o) {
+    	
+    	ArrayList<String[]> res=new ArrayList<String[]>();
+    	String tmp[]=new String[list[0].length];
+        for(int i=0;i<list.length;i++) {
+        	for (int j=0;j<list[0].length;j++) {
+        		if(o.equals(list[i][j])) {
+        			for(int y=0;y<list[0].length;y++) {
+        				tmp[y]=list[i][y];
+        			}
+        			res.add(tmp);
+        			tmp=new String[list[0].length];
+        		}
+        	}
+        }
+        if(res.size()==0) {
+        	return null;
+        }
+        String lines[][]=new String[res.size()+1][list[0].length];
+        lines[0]=list[0].clone();
+        int r=1;
+        for (String[] h : res) {
+        	lines[r]=h.clone();
+        	r++;
+        }
+		return new CSV(lines);
+    }
+    
+    
 }

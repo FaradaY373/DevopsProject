@@ -14,5 +14,6 @@ public class App
         CSV csv = new CSV("res/fich.csv");
         csv.parse();
         csv.print();
+        csv.lastLines(3); 
     }
 }

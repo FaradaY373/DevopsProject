@@ -48,4 +48,35 @@ public class CSV {
 			System.out.println();
 		}
 	}
+	public void firstLines(int n) {
+		if(n>list.length) { //Si n est trop grand on print la 1er ligne
+			for(int i = 0; i < list[0].length ; i++) {
+				System.out.print(list[0][i]+" ");
+			}
+		}
+		else { //Sinon
+			for(int i = 0; i < n;i++) {
+				for(int j = 0; j < list[i].length; j++) {
+					System.out.print(list[i][j]+" ");
+				}
+				System.out.println();
+			}
+		}
+	}
+	public void lastLines(int n) {
+		if(n>list.length) { //Si n est trop grand on print la derniere ligne
+			for(int i = 0; i < list[0].length ; i++) {
+				System.out.print(list[list.length-1][i]+" ");
+			}
+		}
+		else { //Sinon
+			int len = list.length - n;
+			for(int i = len; i < list.length;i++) {
+				for(int j = 0; j < list[i].length; j++) {
+					System.out.print(list[i][j]+" ");
+				}
+				System.out.println();
+			}
+		}
+	}
 }

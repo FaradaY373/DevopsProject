@@ -20,7 +20,6 @@ public class App
         CSV csv;
         csv = new CSV("res/fich2.csv");
         csv.parse();
-        System.out.println((csv.selectLines("38")).print());
     }
 
 }

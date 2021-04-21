@@ -5,6 +5,7 @@ name: Java CI with Maven
 
 on:
   push:
+
     branches: [ main , CSV , LinesSelection]
   pull_request:
     branches: [ main , CSV , LinesSelection]

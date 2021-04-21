@@ -1,5 +1,7 @@
 package main;
 
+import java.io.IOException;
+
 /**
  * Hello world!
  * Le test de JavaDoc
@@ -7,15 +9,10 @@ package main;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws IOException
     {
-        System.out.println( "Hello World!" );
-    }
-    
-    public static int add(int a,int b) {
-    	return a+b;
-    }
-    public static int sub(int a,int b) {
-    	return a-b;
+        CSV csv = new CSV("res/fich.csv");
+        csv.parse();
+        csv.print();
     }
 }

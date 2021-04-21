@@ -1,5 +1,8 @@
 package main;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 /**
  * Hello world!
  * Le test de JavaDoc
@@ -7,15 +10,17 @@ package main;
  */
 public class App 
 {
-    public static void main( String[] args )
+	
+	public static void main(String[] args) {
+		simple();
+	}
+	
+    public static void simple() 
     {
-        System.out.println( "Hello World!" );
+        CSV csv;
+		csv = new CSV("res/fich.csv");
+		csv.parse();
+	    System.out.println(csv.print());
     }
-    
-    public static int add(int a,int b) {
-    	return a+b;
-    }
-    public static int sub(int a,int b) {
-    	return a-b;
-    }
+
 }

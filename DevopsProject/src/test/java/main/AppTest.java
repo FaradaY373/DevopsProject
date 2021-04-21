@@ -17,13 +17,7 @@ public class AppTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        assertTrue( true );
-    }
-    
-    @Test
-    public void addition()
-    {
-    	assertEquals("Test1 1+2 = 3",3,App.add(1, 2));
-    	assertNotEquals("Test1 1+2 != 4",4,App.add(1, 2));
+        App.simple();
+        
     }
 }

@@ -6,9 +6,9 @@ name: Java CI with Maven
 on:
   push:
 
-    branches: [ main , CSV , LinesSelection]
+    branches: [ main , CSV , LinesSelection , Arifmetics]
   pull_request:
-    branches: [ main , CSV , LinesSelection]
+    branches: [ main , CSV , LinesSelection , Arifmetics]
 
 jobs:
   build:

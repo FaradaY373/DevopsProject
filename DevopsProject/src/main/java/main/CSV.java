@@ -87,4 +87,50 @@ public class CSV {
 		}
 		return res;
 	}
+	
+	public float moyenne(int n) {
+		float res = 0.0f;
+		for(int i = 1;i < list.length;i++) {
+			try {
+				res+=Float.parseFloat(list[i][n-1]);
+			}catch(Exception e) {
+				System.out.println("La case "+i+" "+(n-1)+" n'est pas un int ou float");
+				return -1.f;
+			}
+		}
+		res /= list.length;
+		return res;
+	}
+	public float min(int n) {
+		float res = 99999999999999999999999999999999999999.f;
+		float min;
+		for(int i = 1;i < list.length;i++) {
+			try {
+				min=Float.parseFloat(list[i][n-1]);
+				if(min < res) {
+					res = min;
+				}
+			}catch(Exception e) {
+				System.out.println("La case "+i+" "+(n-1)+" n'est pas un int ou float");
+				return res;
+			}
+		}
+		return res;
+	}
+	public float max(int n) {
+		float res = -99999999999999999999999999999999999999.f;
+		float max;
+		for(int i = 1;i < list.length;i++) {
+			try {
+				max=Float.parseFloat(list[i][n-1]);
+				if(max > res) {
+					res = max;
+				}
+			}catch(Exception e) {
+				System.out.println("La case "+i+" "+(n-1)+" n'est pas un int ou float");
+				return res;
+			}
+		}
+		return res;
+	}
 }

@@ -15,11 +15,12 @@ public class CSV {
 		try {
 			reader = new BufferedReader(new FileReader(path));
 		}catch(Exception e) {
-			e.printStackTrace();
+			System.out.println(e.toString());			
+			//e.printStackTrace();
 			System.exit(0);
 		}
 	}
-	public void parse() throws IOException {
+	public void parse() {
 		ArrayList<String[]> arr = new ArrayList();
 		
 		String line;

@@ -1,6 +1,7 @@
 package main;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,12 +12,13 @@ public class CSV {
 	public CSV(String[][] table ) {
 		list = table;
 	}
-	public CSV(String path) {
+	public CSV(String path){
 		try {
 			reader = new BufferedReader(new FileReader(path));
 		}catch(Exception e) {
 			reader = null;
 		}
+		
 	}
 	public void parse() {
 		ArrayList<String[]> arr = new ArrayList();
@@ -40,6 +42,7 @@ public class CSV {
 		}
 	}
 	public String  print() {
+
         String aff="";
         for(int i = 0;i<list.length;i++) {
             for(int j = 0;j<list[i].length;j++) {

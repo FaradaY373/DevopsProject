@@ -5,9 +5,10 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ main , LinesSelection]
+
+    branches: [ main , CSV , LinesSelection]
   pull_request:
-    branches: [ main ,LinesSelection]
+    branches: [ main , CSV , LinesSelection]
 
 jobs:
   build:

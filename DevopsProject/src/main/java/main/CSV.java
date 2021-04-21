@@ -15,11 +15,10 @@ public class CSV {
 		try {
 			reader = new BufferedReader(new FileReader(path));
 		}catch(Exception e) {
-			e.printStackTrace();
-			System.exit(0);
+			reader = null;
 		}
 	}
-	public void parse() throws IOException {
+	public void parse() {
 		ArrayList<String[]> arr = new ArrayList();
 		
 		String line;
@@ -40,43 +39,49 @@ public class CSV {
 			}
 		}
 	}
-	public void  print() {
-		for(int i = 0;i<list.length;i++) {
-			for(int j = 0;j<list[i].length;j++) {
-				System.out.print(" "+list[i][j]+" ");
-			}
-			System.out.println();
-		}
-	}
-	public void firstLines(int n) {
+	public String  print() {
+        String aff="";
+        for(int i = 0;i<list.length;i++) {
+            for(int j = 0;j<list[i].length;j++) {
+                aff+=" "+list[i][j]+" ";
+            }
+            aff+="\n";
+        }
+        return aff;
+    }
+	public String firstLines(int n) {
+		String res = "";
 		if(n>list.length) { //Si n est trop grand on print la 1er ligne
 			for(int i = 0; i < list[0].length ; i++) {
-				System.out.print(list[0][i]+" ");
+				res+=list[0][i]+" ";
 			}
 		}
 		else { //Sinon
 			for(int i = 0; i < n;i++) {
 				for(int j = 0; j < list[i].length; j++) {
-					System.out.print(list[i][j]+" ");
+					res+=list[i][j]+" ";
 				}
-				System.out.println();
+				res+="\n";
 			}
 		}
+		return res;
 	}
-	public void lastLines(int n) {
+	public String lastLines(int n) {
+		String res = "";
 		if(n>list.length) { //Si n est trop grand on print la derniere ligne
 			for(int i = 0; i < list[0].length ; i++) {
-				System.out.print(list[list.length-1][i]+" ");
+				res+=list[list.length-1][i]+" ";
 			}
 		}
 		else { //Sinon
 			int len = list.length - n;
 			for(int i = len; i < list.length;i++) {
 				for(int j = 0; j < list[i].length; j++) {
-					System.out.print(list[i][j]+" ");
+					res+=list[i][j]+" ";
 				}
-				System.out.println();
+				res+="\n";
 			}
 		}
+		return res;
 	}
 }

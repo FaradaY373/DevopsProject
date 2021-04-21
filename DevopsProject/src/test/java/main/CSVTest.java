@@ -51,5 +51,13 @@ public class CSVTest {
 		assertNotNull("teste la création de CSV",csv);
 		
 	}
+	
+	@Test
+	public void testCSVAffich() {
+		String test=" name  age  size \nTheo  67  XXL \nIvan  13  XXS";
+		CSV csv= new CSV(test);
+		assertNotNull("teste la création de CSV",csv);
+		
+	}
 
 }

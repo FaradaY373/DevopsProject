@@ -41,12 +41,14 @@ public class CSV {
 			}
 		}
 	}
-	public void  print() {
+	public String  print() {
+		String aff="";
 		for(int i = 0;i<list.length;i++) {
 			for(int j = 0;j<list[i].length;j++) {
-				System.out.print(" "+list[i][j]+" ");
+				aff+=" "+list[i][j]+" ";
 			}
-			System.out.println();
+			aff+="\n";
 		}
+		return aff;
 	}
 }

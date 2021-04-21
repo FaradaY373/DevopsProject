@@ -10,12 +10,17 @@ import java.io.IOException;
  */
 public class App 
 {
-    public static void main() 
+	
+	public static void main(String[] args) {
+		simple();
+	}
+	
+    public static void simple() 
     {
         CSV csv;
 		csv = new CSV("res/fich.csv");
 		csv.parse();
-	    csv.print();
+	    System.out.println(csv.print());
     }
 
 }

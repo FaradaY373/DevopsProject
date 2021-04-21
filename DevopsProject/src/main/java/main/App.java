@@ -21,6 +21,7 @@ public class App
         csv = new CSV("res/fich.csv");
         csv.parse();
         System.out.println(csv.print());
+        System.out.println(csv.moyenne(2));
     }
 
 }

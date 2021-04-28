@@ -6,16 +6,22 @@ import org.junit.Test;
 
 public class ArifmeticTest {
 	@Test
-    public void min()
+    public void min() throws TypeArithmeticException
     {
 		CSV csv = new CSV("res/fich.csv");
 		csv.parse();
 		float f = 13.0f;
 		assertEquals(csv.min(2),f,0.0000000000001);
-		float f2 = 99999999999999999999999999999999999999.f;
-		assertEquals(csv.min(1),f2,0.0000000000001);
-		assertEquals(csv.min(-12),f2,0.0000000000001);
     }
+	@Test(expected = TypeArithmeticException.class)
+    public void min1() throws TypeArithmeticException
+    {
+		CSV csv = new CSV("res/fich.csv");
+		csv.parse();
+		csv.min(1);
+    }
+	
+	
 	@Test
 	public void max()
     {

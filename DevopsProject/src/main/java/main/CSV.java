@@ -207,18 +207,25 @@ public class CSV {
 		res /= list.length;
 		return res;
 	}
-	public float min(int n) {
-		float res = 99999999999999999999999999999999999999.f;
+	public float min(int n) throws TypeArithmeticException {
+		float res =0;
 		float min;
+		try{
+			res =Float.parseFloat(list[1][n-1]);
+		}catch(Exception e) {
+			TypeArithmeticException exc = new TypeArithmeticException("Not float or int");
+			exc.printStackTrace();
+			throw exc;
+		}
 		for(int i = 1;i < list.length;i++) {
-			try {
+			try{
 				min=Float.parseFloat(list[i][n-1]);
-				if(min < res) {
+				if(min < res) 
 					res = min;
-				}
 			}catch(Exception e) {
-				System.out.println("La case "+i+" "+(n-1)+" n'est pas un int ou float");
-				return res;
+				TypeArithmeticException exc = new TypeArithmeticException("Not float or int");
+				exc.printStackTrace();
+				throw exc;
 			}
 		}
 		return res;

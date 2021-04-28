@@ -74,6 +74,7 @@ public class SelectionAgregationTest {
 	}
 	
 	
+	
 
 	private void AssertEquals(CSV lines, CSV csv2) {
 		if(lines==null && csv2!=null) {

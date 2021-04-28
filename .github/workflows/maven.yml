@@ -6,9 +6,9 @@ name: Java CI with Maven
 on:
   push:
 
-    branches: [ main , CSV , LinesSelection , Arifmetics]
+    branches: [ main , CSV , LinesSelection , Arifmetics , maven]
   pull_request:
-    branches: [ main , CSV , LinesSelection , Arifmetics]
+    branches: [ main , CSV , LinesSelection , Arifmetics , maven]
 
 jobs:
   build:
@@ -25,7 +25,3 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
-    - name: Deploy to GitHub packages
-      run: mvn -B deploy -Dmaven.javadoc.skip=true -Dmaven.source.skip=true
-      env:
-        GITHUB_TOKEN: ${{ github.token }}

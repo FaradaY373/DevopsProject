@@ -20,8 +20,10 @@ public class App
         CSV csv;
         csv = new CSV("res/fich.csv");
         csv.parse();
-        System.out.println(csv.print());
-        System.out.println(csv.moyenne(2));
+        try {System.out.println(csv.min(1));}catch(Exception e){}
+        
+        
+        
     }
 
 }

@@ -1,14 +1,15 @@
 # DevopsProject
 
-## Badges
+## Authors
+![ByI](https://badgen.net/badge/made%20by/Ivan/cyan)
+![ByC](https://badgen.net/badge/made%20by/Corentin/cyan)
 
+## Made with
 ![Git](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![Maven](https://badgen.net/badge/made%20with/maven/purple)
-![Bitcoin](https://img.shields.io/badge/Bitcoin-000000?style=for-the-badge&logo=bitcoin&logoColor=white)
 ![Science](	http://ForTheBadge.com/images/badges/built-with-science.svg)
-![ByI](https://badgen.net/badge/made%20by/Ivan/cyan)
-![ByC](https://badgen.net/badge/made%20by/Corentin/cyan)
+
 
 
 

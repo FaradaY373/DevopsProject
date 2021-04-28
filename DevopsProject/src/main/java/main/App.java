@@ -18,12 +18,7 @@ public class App
     public static void simple() 
     {
         CSV csv;
-        csv = new CSV("res/fich.csv");
+        csv = new CSV("res/fich2.csv");
         csv.parse();
         try {System.out.println(csv.min(1));}catch(Exception e){}
-        
-        
-        
-    }
-
 }

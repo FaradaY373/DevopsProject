@@ -33,7 +33,13 @@
 	  </dependency>
   </dependencies>
   
-  
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub FaradaY373 Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/FaradaY373/DevopsProject</url>
+    </repository>
+  </distributionManagement>
   
 
   <build>

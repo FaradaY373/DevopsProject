@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>main</groupId>
-  <artifactId>DevopsProject</artifactId>
+  <artifactId>devopsproject</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <name>DevopsProject</name>
@@ -32,6 +32,14 @@
 	    <type>maven-plugin</type>
 	  </dependency>
   </dependencies>
+
+  <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub FaradaY373 Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/FaradaY373/DevopsProject</url>
+        </repository>
+  </distributionManagement>
   
 
   <build>
